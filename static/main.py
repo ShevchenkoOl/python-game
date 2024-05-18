@@ -9,7 +9,7 @@ pygame.init()
 HEIGTH = 700
 WIDTH = 1200
 
-background = pygame.transform.scale(pygame.image.load('./images/background.png'), (WIDTH, HEIGTH))
+background = pygame.transform.scale(pygame.image.load('../images/background.png'), (WIDTH, HEIGTH))
 bg_X1 = 0
 bg_X2 = background.get_width()
 bg_move = 3
@@ -23,11 +23,11 @@ color_black = (0, 0, 0)
 color_blue = (0, 0, 255)
 color_green = (0, 255, 0)
 
-IMAGE_PATH = './images/goose_animation'
+IMAGE_PATH = '../images/goose_animation'
 PLAYER_IMAGES = os.listdir(IMAGE_PATH)
 
 player_size = (30, 30)
-player = pygame.image.load('./images/player.png')
+player = pygame.image.load('../images/player.png')
 player_rect = player.get_rect()
 player_rect.centery = HEIGTH // 2
 player_rect.centerx = WIDTH - 1000
@@ -38,14 +38,14 @@ player_move_left = [-4, 0]
 
 def create_bonus():
     bonus_size = (60, 60)
-    bonus = pygame.image.load('./images/bonus.png')
+    bonus = pygame.image.load('../images/bonus.png')
     bonus_rect = pygame.Rect(random.randint(50, WIDTH-50), 0, *bonus_size)
     bonus_move = [0, random.randint(4, 8)]
     return [bonus, bonus_rect, bonus_move]
 
 def create_enemy():
     enemy_size = (30, 30)
-    enemy = pygame.image.load('./images/enemy.png')
+    enemy = pygame.image.load('../images/enemy.png')
     enemy_rect = pygame.Rect(WIDTH, random.randint(50, HEIGTH-50), *enemy_size)
     enemy_move = [random.randint(-8, -4), 0]
     return [enemy, enemy_rect, enemy_move]
